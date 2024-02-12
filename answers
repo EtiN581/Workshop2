@@ -1,0 +1,15 @@
+First Part :
+1) torrent create Chaton.jpeg -o image.torrent
+
+2) copy Chaton.jpeg partition1
+   torrent create partition1 -o partition1.torrent
+   The torrent created has a size smaller than the image torrent
+
+3) torrent create partition2 -o partition2.torrent
+
+Second Part :
+1) ipfs add Chaton.jpeg
+   CID : QmeJaufp9seXCpHMFwxX53P3oRQW8Ny1DduCXAxebEwxv7
+
+2) ipfs add -r partition1
+   IFPS create a CID for the folder and each file that it contains
