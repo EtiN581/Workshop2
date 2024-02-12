@@ -1,0 +1,21 @@
+name : Pinata Workflow
+on:
+  push :
+    branches : main
+  pull_request:
+    branches: main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Pinata deploy action
+        uses: anantaramdas/ipfs-pinata-deploy-action@v1.6.4
+        with:
+          pin-name: 'Decentralized Cat'
+          path: '.'
+          pinata-api-key: 73a790efdc4a76c088ca
+          pinata-secret-api-key: da7649a0bb7b516dc2ad9f24987ce647be7bf460f15fb52f45090d395ff25c66
+          verbose: true
+          remove-old: false
